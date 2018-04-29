@@ -20,6 +20,7 @@ Go to QMC Add a Security Rule select unspecified from Template.
 | Resource filter: | License_*            |
 | Condition:       | !user.IsAnonymous()  |
 
+<img src="https://github.com/senseexcel/senseexcel-reporting/raw/master/docs/qmc-securityrule-license.PNG" width="250">
 
 
 ### Scheduler Rule
