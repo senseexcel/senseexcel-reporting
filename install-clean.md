@@ -8,10 +8,10 @@
 
 Please install the  .NET Core Runtime prior to this installation. Click the link to download the appropriate version from Microsoft. [Download](https:/www.microsoft.com/net/download/Windows/run)
  
- 3. Create Target Sub-directories
+ 3. Create Target Sub-directories in your existing QlikShare directory.
  
-C:\Reporting (advised not to use Qlik share directory)
-C:\Reporting\SERReports
+C:\QlikShare\Reporting
+C:\QlikShare\Reporting\SERReports
 
 ## *FILE PREPARATION*
 
@@ -37,10 +37,6 @@ RunConnector.bat
 
 Security keys will be created in  %appdata%\Roaming\senseexcel\reporting
 
-Connector Logs will be created in %appdata%\Roaming\senseexcel\ser-con-aai
- 
-Engine Logs will be created in %appdata%\Roaming\senseexcel\ser-engine
-
  2. Open Services.msc
  
  3. Restart Qlik Repository Services and all sub-processes.
@@ -56,6 +52,10 @@ QMC> MANAGE RESOURCES > EXTENSIONS +  Import + Choose File
 C:\Desktop\ser-ext-ondemand.zip
 
 ##  *UPDATE REPORTING CONFIGURATION FILE*
+
+For a default installation this file will not need to be changed.  
+
+For additional information consult the example file \Reporting\Connector\config.hjson.example
 
  1. Open the following file using Notepad or other text editor:
 C:\Reporting\Connector\config.hjson
@@ -222,16 +222,16 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new > SER License
 ### BASIC
 |Setting |Value|
 ---|---|
-|Resource Filter | License_*|
-|Actions | Read ||
+|Resource Filter | License_*
+|Actions | Read |
 
 ### ADVANCED
 Add the below value manually into the Conditions table:
 
 |Setting |Value
 ------------------|------------------
-|Conditions | !user.IsAnononymous()|
-|Context | Both in hub and QMC|
+|Conditions |!user.IsAnononymous()
+|Context |Both in hub and QMC|
 
 Validate Rule > Add Rule
 
@@ -253,11 +253,11 @@ Description ||
 
 Setting |Value
 ------------------|------------------
-Resource Filter | App_*|
+Resource Filter | App_*
 Actions | Check Read|
 |User |name | =
 |Value |ser_scheduler|
-| OR|||
+| AND ||
 |user | userDirectory  = |
 |value | INTERNAL|
 
