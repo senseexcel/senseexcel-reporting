@@ -1,4 +1,4 @@
-> # *Sense Excel ReportingInstallation Process*
+> # *Sense Excel Reporting Installation Process*
 
 ##  *SERVER PREPARATION*
 
@@ -285,23 +285,28 @@ Setting |Value
 
 Validate Rule > Add Rule
 
-## Validate Connector is Running
+## VALIDATE CONNECTOR IS RUNNING
 
-Go to C:\qlikshare\Reporting and run the RunConnector.bat batch file. Do not run in Administrator mode.
+1. Go to C:\qlikshare\Reporting and run the RunConnector.bat batch file. Do not run in Administrator mode.
 
-If the connector is running successfully the console window will display the following text on the last line.
+2. If the connector is running successfully the console window will display the following text on the last line.
 
-The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
+3. The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
 
-Go to services.msc and restart the Qlik Repository Database Service. This will prompt for a restart of every Qlik service.
+4. Go to services.msc and restart the Qlik Repository Database Service. This will prompt for a restart of every Qlik service.
 
 ## SET THE SER CONNECTOR TO RUN AS A SERVICE
 
-1. Open a command prompt.  
+1. Open a command prompt.
+
 2. Navigate to the C:/Reporting/Connector directory
+
 3. Execute the following command  dotnet SerConAai.dll action:install
+
 4. Open Services.msc
+
 5. Change the owner of the “Qlik Connector for SER” to the This User account.
+
 6. Restart the service.
 
 
