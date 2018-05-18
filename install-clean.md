@@ -43,7 +43,7 @@ Install the ser-ext-ondemand extension on the Qlik Sense server.
 
 QMC> MANAGE RESOURCES > EXTENSIONS +  Import + Choose File
 
-\Desktop\ser-ext-ondemand.zip
+ser-ext-ondemand.zip
 
 ![Install Extension](https://github.com/senseexcel/senseexcel-reporting/blob/master/Extension-Install.PNG)
 
@@ -56,10 +56,10 @@ For additional information consult the example file \Reporting\Connector\config.
 If changes to this configuration are necessary, perform the following steps.
 
  1. Open the following file using Notepad or other text editor:
-C:\Reporting\Connector\config.hjson
+\Reporting\Connector\config.hjson
 
  2. Update the serEnginePath parameter:
-serEnginePath: C:\Reporting\Engine\SenseExcelReporting.exe
+serEnginePath: \Reporting\Engine\SenseExcelReporting.exe
 
  3. Update bindingHost parmeter:
 bindingHost: localhost
@@ -96,18 +96,25 @@ Depending on your Qlik Sense licensing strategy, choose one of the following app
  2. Copy and paste your LEF information
  3. Delete any spaces at end of each line.
  4. Save file with name license.txt.
+ 5. Open/Edit the senseexcel content library
+  
+ QMC > MANAGE CONTENT > Content Libraries > senseexcel
+ 
  5. Upload the license.txt file to the senseexcel content library.
  
 QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
 
 ![Content Library Contents](https://github.com/senseexcel/senseexcel-reporting/docs/master/Conent-Library-Contents.PNG)
 
- 6. Check the Advanced Property on the right side of the screen
- 7. Add the value !user.IsAnonymous in the Conditions box.
+ 6. Check the Advanced Property on the right side of the screen.
+ 
+ 7. Edit the Security rule for access to "senseexcel"
+ 
+ 8. Add the value !user.IsAnonymous in the Conditions box.
  
  ![Content Library Advanced](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Conent-Library-Advanced.PNG)
  
-  8. Hit the Apply button.
+ 9. Hit the Apply button.
  
 
 ### Named Licensing
@@ -126,11 +133,13 @@ QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
 
  8. Check the Advanced Property on the right side of the screen
  
- 9. Add the value !user.IsAnonymous in the Conditions box.
+ 9. Edit the Security rule for access to "senseexcel"
+ 
+ 10. Add the value !user.IsAnonymous in the Conditions box.
  
   ![Content Library Advanced](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Conent-Library-Advanced.PNG)
  
- 10. Hit the Apply button.
+ 11. Hit the Apply button.
 
 ##  ADD ANALYTIC CONNECTION
  
@@ -171,7 +180,7 @@ Advanced
 |Setting|Value|
 |--|--|
 |Description  |ser
-|Prefix| ser 
+|Prefix|ser 
 Session inactivity timeout | 30
 Session cookie header name | X-Qlik-Session-ser|
 
@@ -268,7 +277,7 @@ Context			Both in hub and QMC
 
 Validate Rule > Add Rule
 
-![Shared Content Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/Shared-Content-Security-Rule.PNG)
+![Shared Content Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/Security-Rule-Shared-Content.PNG)
 
 
 ### SER License
