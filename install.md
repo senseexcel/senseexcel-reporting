@@ -23,14 +23,14 @@ serConnector.zip
  2. Unzip serConnector.zip to the \Reporting directory
  
  
- ![Install Files](https://github.com/senseexcel/senseexcel-reporting/edit/docs-edit/docs/Install-Files.PNG)
+ ![Install Files](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Install-Files.PNG)
  
 
 ## INSTALL CONNECTOR
 
 1. Execute RunConnector.bat from the \Reporting directory.  
 
- ![Install Connector](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Connector-Console.PNG)
+ ![Install Connector](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Connector-Console.PNG)
 
 2. Security keys will be created in  %appdata%\Roaming\senseexcel\reporting.
 
@@ -45,7 +45,7 @@ QMC> MANAGE RESOURCES > EXTENSIONS +  Import + Choose File
 
 ser-ext-ondemand.zip
 
-![Install Extension](https://github.com/senseexcel/senseexcel-reporting/blob/master/Extension-Install.PNG)
+![Install Extension](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Extension-Install.PNG)
 
 ##  UPDATE REPORTING CONFIGURATION FILE
 
@@ -83,7 +83,7 @@ senseexcel
 
 QMC > Content Libraries >  +Create New > senseexcel
 
-![Add Content Library](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Content-Library-Add.PNG)
+![Add Content Library](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Content-Library-Add.PNG)
 
 
 ## ADD LICENSE INFORMATION
@@ -108,7 +108,7 @@ Depending on your Qlik Sense licensing strategy, choose one of the following app
  
 QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
 
-![Content Library Contents](https://github.com/senseexcel/senseexcel-reporting/docs/master/Conent-Library-Contents.PNG)
+![Content Library Contents](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Content-Library-Contents.PNG)
 
  6. Check the Advanced Property on the right side of the screen.
  
@@ -116,7 +116,7 @@ QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
  
  8. Add the value !user.IsAnonymous in the Conditions box.
  
- ![Content Library Advanced](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Conent-Library-Advanced.PNG)
+ ![Content Library Advanced](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Content-Library-Advanced.PNG)
  
  9. Hit the Apply button.
  
@@ -138,7 +138,7 @@ QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
  
 QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
 
- ![License Example](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/License-Example.PNG)
+ ![License Example](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/License-Example.PNG)
 
  8. Check the Advanced Property on the right side of the screen
  
@@ -146,7 +146,7 @@ QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
  
  10. Add the value !user.IsAnonymous in the Conditions box.
  
-  ![Content Library Advanced](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Conent-Library-Advanced.PNG)
+  ![Content Library Advanced](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Conent-Library-Advanced.PNG)
  
  11. Hit the Apply button.
 
