@@ -202,7 +202,7 @@ Host white list > Add New Value > YOUR SERVER NAME
 
 
 ### LINK PROXIES
-As mnentioned earlier, this step is performed last to ensure that the link between the Central proxy and newly created Virtual proxy will work properly.
+This step is performed last to ensure that the link between the Central proxy and newly created Virtual proxy will work properly.
 
 QMC > Proxies > Virual Proxies, Central (Default)  > Associate Items > Virtual Proxies > SER > +Add > Link Existing > ser
 
@@ -366,5 +366,6 @@ The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
 ![SER Service Update Credentials](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Connector-Service-Credentials.PNG)
 
 6. Restart the service.
-7. Restart the Qlik Repository Service and all child processes.
+
+7. Restart the Qlik Repository Service and all sub-processes.
 
