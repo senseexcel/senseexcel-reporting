@@ -208,7 +208,7 @@ JWT certificate | -----BEGIN CERTIFICATE-----|
 |JWT attribute value for user directory | UserDirectory
 
 
-![Virtual Proxy](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Virtual-Proxy-1.PNG)
+![Virtual Proxy](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Virtual-Proxy-1.PNG)
 
 
 ### LOAD BALANCING
@@ -225,7 +225,7 @@ This step is performed last to ensure that the link between the Central proxy an
 QMC > Proxies > Virual Proxies, Central (Default)  > Associate Items > Virtual Proxies > SER > +Add > Link Existing > ser
 
 
-![Virtual Proxy](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Virtual-Proxy-2.PNG)
+![Virtual Proxy](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Virtual-Proxy-2.PNG)
 
 
 ## CREATE SECURITY RULES
@@ -257,7 +257,7 @@ Conditions		!user.IsAnonymous()
 Context			Both in hub and QMC		
 
 
- ![License ReadAll Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/Security-Rule-License.PNG)
+ ![License ReadAll Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Security-Rule-License.PNG)
 
 ### Shared Content
 
@@ -286,7 +286,7 @@ Context			Both in hub and QMC
 
 Validate Rule > Add Rule
 
-![Shared Content Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/Security-Rule-Shared-Content.PNG)
+![Shared Content Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Security-Rule-Shared-Content.PNG)
 
 
 ### SER License
@@ -317,7 +317,7 @@ Add the below value manually into the Conditions table:
 
 Validate Rule > Add Rule
 
-![SER License Security Rule]( https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Security-Rule-SER-License.PNG)
+![SER License Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Security-Rule-SER-License.PNG)
 
 ### SER Scheduler
 
@@ -353,7 +353,7 @@ Setting |Value
 Validate Rule > Add Rule
 
 
-![SER Scheduler Security Rule]( https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Security-Rule-SER-Scheduler.PNG)
+![SER Scheduler Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Security-Rule-SER-Scheduler.PNG)
 
 ## VALIDATE CONNECTOR IS RUNNING
 
@@ -363,7 +363,7 @@ Validate Rule > Add Rule
 
 The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
 
-![Install Connector](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Connector-Console.PNG)
+![Install Connector](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Connector-Console.PNG)
 
 4. Go to services.msc and restart the Qlik Repository Database Service. This will prompt for a restart of every Qlik service.
 
@@ -375,14 +375,14 @@ The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
 
 3. Execute the following command  dotnet SerConAai.dll action:install as Administrator
 
-![SER Connector as a Service](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Connector-As-Service.PNG)
+![SER Connector as a Service](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Connector-As-Service.PNG)
 
 
 4. Open Services.msc
 
 5. Change the owner of the “Qlik Connector for SER” to the This User account.
 
-![SER Service Update Credentials](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Connector-Service-Credentials.PNG)
+![SER Service Update Credentials](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Connector-Service-Credentials.PNG)
 
 6. Restart the service.
 
