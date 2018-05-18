@@ -146,7 +146,7 @@ QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
  
  10. Add the value !user.IsAnonymous in the Conditions box.
  
-  ![Content Library Advanced](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Conent-Library-Advanced.PNG)
+  ![Content Library Advanced](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Content-Library-Advanced.PNG)
  
  11. Hit the Apply button.
 
@@ -158,7 +158,7 @@ QMC > MANAGE CONTENT > Analytic Connections > + Create New
 
 |Setting|Value|
 ------|--------------
-|Name | ser
+|Name | SER
 |Host | localhost
 |Port | 50059|
 |Reconnect Timeout|30
