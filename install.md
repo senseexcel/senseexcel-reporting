@@ -204,7 +204,7 @@ Copy the full contents and paste them into the JWT certificate area shown below.
 |Anonymous access mode | No anonymous user   |
 |Authentication method | JWT|
 JWT certificate | -----BEGIN CERTIFICATE-----|
-|JWT attribute for user ID | UserID|
+|JWT attribute for user ID | UserId|
 |JWT attribute value for user directory | UserDirectory
 
 
@@ -371,7 +371,7 @@ The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
 
 1. Open a command prompt.
 
-2. Navigate to the C:/Reporting/Connector directory
+2. Navigate to the \Reporting\Connector directory
 
 3. Execute the following command  dotnet SerConAai.dll action:install as Administrator
 
