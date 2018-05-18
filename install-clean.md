@@ -6,7 +6,7 @@
 
  2.  Please install the NET Core Runtime prior to this installation. Click on the link to download [Download](https:/www.microsoft.com/net/download/Windows/run)
  
- 3. Create Target Sub-directories in your existing QlikShare directory.
+ 3. Create the following sub-directories withing your QlikShare directory.
  
 \Reporting
 
