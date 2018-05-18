@@ -117,6 +117,8 @@ QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
  5. The  FROM:TO info is optional.  Only include it if you want to put time limits on your named user licenses.
  6. Save file with name license.txt. 
  7. Upload the license.txt file to the senseexcel content library.
+ 
+ ![License.txt](https://github.com/senseexcel/senseexcel-reporting/blob/master/License.txt-Example.PNG)
 
 QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
 
@@ -137,6 +139,9 @@ QMC > MANAGE CONTENT > Analytic Connections > + Create New
 |Port | 50059|
 |Reconnect Timeout|30
 |Request Timeout|30|
+
+ ![Analytic Connection](https://github.com/senseexcel/senseexcel-reporting/blob/master/Analytic-Connection.PNG)
+
 
 ##  *ADD VIRTUAL PROXY*
 In this section you will define a new Virtual Proxy and then link it to the Main Proxy.  This operation MUST be done in a particular order. 
@@ -193,6 +198,35 @@ QMC > Proxies > Virual Proxies, Central (Default)  > Associate Items > Virtual P
 
 ## SECURITY RULES CREATION
 
+### Add LicenseReadAll Security Rule
+
+QMC > MANAGE RESOURCES > Security Rules > + Create new
+
+### IDENTIFICATION
+
+|Setting | Value |
+|-------------------------|
+|Name |LicenseReadAll  |
+|Create Rule from Template | Unspecified|
+|Disabled | Leave Unchecked||
+|Description ||
+
+### BASIC
+
+|Setting | Value |
+|-------------------------|
+|Resource filter |License_*|
+|Actions|Read|
+
+### ADVANCED
+
+Conditions		!user.IsAnonymous()
+
+Context			Both in hub and QMC		
+
+
+ ![License ReadAll Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/License-Read-All-Security-Rule.PNG)
+
 ### Add Shared Content Rule
 
 QMC > MANAGE RESOURCES > Security Rules > + Create new
@@ -200,8 +234,8 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new
 ### IDENTIFICATION
 
 |Setting | Value |
-|------------------|-----------------|
-|Name |_sharedContent*|
+|-------------------------|
+|Name | _sharedContent* |
 |Create Rule from Template | Unspecified|
 |Disabled | Leave Unchecked||
 |Description ||
@@ -221,6 +255,9 @@ Conditions		((user.name="YOUR QLIK USER NAME"))
 Context			Both in hub and QMC			
 
 Validate Rule > Add Rule
+
+![Shared Content Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/Shared-Content-Security-Rule.PNG)
+
 
 ### Add SER License rule
 
@@ -250,6 +287,7 @@ Add the below value manually into the Conditions table:
 
 Validate Rule > Add Rule
 
+![SER License Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/SER-License-Security-Rule.PNG)
 
 ### Add SER Scheduler Rule
 
@@ -276,7 +314,7 @@ Actions | Check Read|
 |user | userDirectory  = |
 |value | INTERNAL|
 
-Conditions field in the ADVANCED section below is automatically populated by the above selections 
+
 
 ### *ADVANCED*
 Setting |Value
@@ -284,6 +322,9 @@ Setting |Value
 |Conditions | ((user.name="ser_scheduler" or user.userDirectory="INTERNAL"))|
 
 Validate Rule > Add Rule
+
+
+![SER Scheduler Security Rule]( https://github.com/senseexcel/senseexcel-reporting/blob/master/SER-Schedule-Security-Rule.PNG)
 
 ## VALIDATE CONNECTOR IS RUNNING
 
@@ -303,9 +344,14 @@ Validate Rule > Add Rule
 
 3. Execute the following command  dotnet SerConAai.dll action:install
 
+![SER Connector as a Service](https://github.com/senseexcel/senseexcel-reporting/blob/master/Run-Connector-as-Service.PNG)
+
+
 4. Open Services.msc
 
 5. Change the owner of the “Qlik Connector for SER” to the This User account.
+
+![SER Service Update Credentials](https://github.com/senseexcel/senseexcel-reporting/blob/master/Connector-Service-Update-Credentials.PNG)
 
 6. Restart the service.
 
