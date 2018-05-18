@@ -2,11 +2,11 @@
 
 ##  PREPARE SERVER
 
- 1.  Confirm Qlik Sense Server version - November 2017 or later
+ 1.  Confirm Qlik Sense Server version. November 2017 or later is required.
 
- 2.  Please install the NET Core Runtime prior to this installation. Click on the link to download [Download](https:/www.microsoft.com/net/download/Windows/run)
+ 2.  Please install the NET Core Runtime prior to this installation. Click to [Download](https:/www.microsoft.com/net/download/Windows/run)
  
- 3. Create the following sub-directories withing your QlikShare directory.
+ 3. Create the following sub-directories withing your Qlik-Share.
  
 \Reporting
 
@@ -28,7 +28,7 @@ serConnector.zip
 
 ## INSTALL CONNECTOR
 
-1. Execute RunConnector.bat from the \Reporting directory
+1. Execute RunConnector.bat from the \Reporting directory.  
 
  ![Install Connector](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Connector-Console.PNG)
 
@@ -350,7 +350,7 @@ The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
 
 2. Navigate to the C:/Reporting/Connector directory
 
-3. Execute the following command  dotnet SerConAai.dll action:install
+3. Execute the following command  dotnet SerConAai.dll action:install as Administrator
 
 ![SER Connector as a Service](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Connector-As-Service.PNG)
 
