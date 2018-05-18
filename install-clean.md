@@ -23,7 +23,7 @@ serConnector.zip
  2. Unzip serConnector.zip to the \Reporting directory
  
  
- ![Install Files](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Install-Files.PNG)
+ ![Install Files](https://github.com/senseexcel/senseexcel-reporting/edit/docs-edit/docs/Install-Files.PNG)
  
 
 ## INSTALL CONNECTOR
@@ -334,7 +334,7 @@ Validate Rule > Add Rule
 
 ## VALIDATE CONNECTOR IS RUNNING
 
-1. Execute the RunConnector.bat batch file from the \Reporting directory. Do not run in Administrator mode.
+1. Execute the RunConnector.bat batch file from the \Reporting directory. Do not run as Administrator.
 
 2. If the connector is running successfully, the console window will display the following text on the last line.
 
