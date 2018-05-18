@@ -6,7 +6,7 @@
 
  2.  Please install the NET Core Runtime prior to this installation. Click to [Download](https:/www.microsoft.com/net/download/Windows/run)
  
- 3. Create the following sub-directories withing your Qlik-Share.
+ 3. Create the following sub-directories within your Qlik Share directories.
  
 \Reporting
 
@@ -49,7 +49,9 @@ QMC> MANAGE RESOURCES > EXTENSIONS +  Import + Choose File
 
 ##  UPDATE REPORTING CONFIGURATION FILE
 
-In a typical installation, this file will not need to be changed. For additional information consult the example file \Reporting\Connector\config.hjson.example.
+In a typical installation, this file will not need to be changed. 
+
+For additional information consult the example file \Reporting\Connector\config.hjson.example.
 
 If changes to this configuration are necessary, perform the following steps.
 
@@ -112,11 +114,11 @@ QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
 
  1. Open a new text file.  
  2. Copy and paste your LEF information
- 3. Delete any spaces at end of each line.
- 4. Append the LEF information with user information as in the example below.  
+ 3. Append the LEF information with user information with the DOMAIN\user info for each user. See the example below.  
  5. The  FROM:TO info is optional. This will put a start and end date on your specified users. Use the format YYYY-MM-DD
- 6. Save file with name license.txt. 
- 7. Upload the license.txt file to the senseexcel content library.
+ 6. Delete any spaces at end of each line.
+ 7. Save file with name license.txt. 
+ 8. Upload the license.txt file to the senseexcel content library.
  
 QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
 
@@ -188,7 +190,7 @@ JWT certificate | -----BEGIN CERTIFICATE-----|
 |JWT attribute value for user directory | UserDirectory
 
 
-![Virtual Proxy](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Analytic-Connection.PNG)
+![Virtual Proxy](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Virtual-Proxy-1.PNG)
 
 
 ### LOAD BALANCING
@@ -203,6 +205,10 @@ Host white list > Add New Value > YOUR SERVER NAME
 As mnentioned earlier, this step is performed last to ensure that the link between the Central proxy and newly created Virtual proxy will work properly.
 
 QMC > Proxies > Virual Proxies, Central (Default)  > Associate Items > Virtual Proxies > SER > +Add > Link Existing > ser
+
+
+![Virtual Proxy](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Virtual-Proxy-2.PNG)
+
 
 ## CREATE SECURITY RULES
 
@@ -233,7 +239,7 @@ Conditions		!user.IsAnonymous()
 Context			Both in hub and QMC		
 
 
- ![License ReadAll Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/License-Read-All-Security-Rule.PNG)
+ ![License ReadAll Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/Security-Rule-License.PNG)
 
 ### Shared Content
 
@@ -242,10 +248,8 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new
 ### IDENTIFICATION
 
 |Setting | Value |
-|-------------------------|
-|Name | _sharedContent* |
-|Create Rule from Template | Unspecified|
-|Disabled | Leave Unchecked||
+-----------|--------------
+|Name | _sharedcontent |
 |Description ||
 
 ### BASIC
@@ -315,14 +319,14 @@ Description ||
 Setting |Value
 ------------------|------------------
 Resource Filter | App_*
-Actions | Check Read|
+Actions |Read|
 |User |name | =
 |Value |ser_scheduler|
 | AND ||
 |user | userDirectory  = |
 |value | INTERNAL|
 
-### *ADVANCED*
+### ADVANCED
 Setting |Value
 ----------|---------------
 |Conditions | ((user.name="ser_scheduler" and user.userDirectory="INTERNAL"))|
@@ -362,4 +366,5 @@ The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
 ![SER Service Update Credentials](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Connector-Service-Credentials.PNG)
 
 6. Restart the service.
+7. Restart the Qlik Repository Service and all child processes.
 
