@@ -325,7 +325,7 @@ Actions | Check Read|
 ### *ADVANCED*
 Setting |Value
 ----------|---------------
-|Conditions | ((user.name="ser_scheduler" or user.userDirectory="INTERNAL"))|
+|Conditions | ((user.name="ser_scheduler" and user.userDirectory="INTERNAL"))|
 
 Validate Rule > Add Rule
 
