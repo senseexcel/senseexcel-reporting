@@ -1,68 +1,57 @@
 > # *Sense Excel Reporting Installation Process*
 
-##  *SERVER PREPARATION*
+##  PREPARE SERVER
 
  1.  Confirm Qlik Sense Server version - November 2017 or later
 
- 2.  Confirm .NET Installation. 
-
-Please install the  .NET Core Runtime prior to this installation. Click the link to download the appropriate version from Microsoft. [Download](https:/www.microsoft.com/net/download/Windows/run)
+ 2.  Please install the NET Core Runtime prior to this installation. Click on the link to download [Download](https:/www.microsoft.com/net/download/Windows/run)
  
  3. Create Target Sub-directories in your existing QlikShare directory.
  
-C:\QlikShare\Reporting
+\Reporting
 
-C:\QlikShare\Reporting\SERReports
+\Reporting\SERReports
 
-## *FILE PREPARATION*
+## PREPARE INSTALLATION FILES
 
- 1. Copy/Download Install Files to Desktop
+ 1. Place the following installation files on your desktop.
 
 ser-ext ondemand.zip
 
 serConnector.zip 
 
- 2. Unzip the SerConnnector.zip to the Desktop
-
- 3. Copy/unzip the following files to the C:\QlikShare\Reporting directory
-
-Apps
-
-ArchivedLogs
-
-CustomData
-
-Reporting
-
-StaticContent
-
-RunConnector.bat
-
-## *RUN CONNECTOR*
-
-1.  Execute RunConnector.bat as Administrator from the \Reporting directory
-
-Security keys will be created in  %appdata%\Roaming\senseexcel\reporting
-
- 2. Open Services.msc
+ 2. Unzip serConnector.zip to the \Reporting directory
  
- 3. Restart Qlik Repository Services and all sub-processes.
+ 
+ ![Install Files](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Install-Files.PNG)
  
 
-## *INSTALL EXTENSION*
+## INSTALL CONNECTOR
 
-Install the ser-ext-ondemand extension on the Qlik Sense 
-server.
+1. Execute RunConnector.bat from the \Reporting directory
+
+ ![Install Connector](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Connector-Console.PNG)
+
+2. Security keys will be created in  %appdata%\Roaming\senseexcel\reporting.
+
+3. Restart Qlik Repository Services and all sub-processes.
+ 
+
+## INSTALL EXTENSION
+
+Install the ser-ext-ondemand extension on the Qlik Sense server.
 
 QMC> MANAGE RESOURCES > EXTENSIONS +  Import + Choose File
 
-C:\Desktop\ser-ext-ondemand.zip
+\Desktop\ser-ext-ondemand.zip
 
-##  *UPDATE REPORTING CONFIGURATION FILE*
+![Install Extension](https://github.com/senseexcel/senseexcel-reporting/blob/master/Extension-Install.PNG)
 
-For a default installation this file will not need to be changed.  
+##  UPDATE REPORTING CONFIGURATION FILE
 
-For additional information consult the example file \Reporting\Connector\config.hjson.example
+In a typical installation, this file will not need to be changed. For additional information consult the example file \Reporting\Connector\config.hjson.example.
+
+If changes to this configuration are necessary, perform the following steps.
 
  1. Open the following file using Notepad or other text editor:
 C:\Reporting\Connector\config.hjson
@@ -77,21 +66,27 @@ bindingHost: localhost
 bindingPort: 50059
 
  5. Update the default the connectors takes parameters to your local server name:
- https://LOCALSERVERNAME/ser as serverUri
-
-6.  Update the defined HTTP header for the virtual proxy
+ (https://LOCALSERVERNAME/ser) as serverUri
+ 
+ 6. Update the defined HTTP header for the virtual proxy
 		 key parameter: X-Qlik-Session-ser
- 7. Save and close config.hjson file.
+		 
+ 7. Save and close config.hjson.
 
-## *ADD CONTENT LIBRARY*
-Add the following content library to the Qlik Sense server:
+## ADD CONTENT LIBRARY
+
+The following content library needs to be added to the Qlik Sense server for license management services.
 
 senseexcel
 
 QMC > Content Libraries >  +Create New > senseexcel
 
+![Add Content Library](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Content-Library-Add.PNG)
 
-## *ADD LICENSE INFO*
+
+## ADD LICENSE INFORMATION
+
+Depending on your Qlik Sense licensing strategy, choose one of the following approaches. 
 
 ### Token Licensing 
 
@@ -103,9 +98,14 @@ QMC > Content Libraries >  +Create New > senseexcel
  
 QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
 
+![Content Library Contents](https://github.com/senseexcel/senseexcel-reporting/docs/master/Conent-Library-Contents.PNG)
+
  6. Check the Advanced Property on the right side of the screen
  7. Add the value !user.IsAnonymous in the Conditions box.
- 8. Hit the Apply button.
+ 
+ ![Content Library Advanced](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Conent-Library-Advanced.PNG)
+ 
+  8. Hit the Apply button.
  
 
 ### Named Licensing
@@ -114,19 +114,23 @@ QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
  2. Copy and paste your LEF information
  3. Delete any spaces at end of each line.
  4. Append the LEF information with user information as in the example below.  
- 5. The  FROM:TO info is optional.  Only include it if you want to put time limits on your named user licenses.
+ 5. The  FROM:TO info is optional. This will put a start and end date on your specified users. Use the format YYYY-MM-DD
  6. Save file with name license.txt. 
  7. Upload the license.txt file to the senseexcel content library.
  
- ![License.txt](https://github.com/senseexcel/senseexcel-reporting/blob/master/License.txt-Example.PNG)
-
 QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
 
+ ![License Example](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/License-Example.PNG)
+
  8. Check the Advanced Property on the right side of the screen
+ 
  9. Add the value !user.IsAnonymous in the Conditions box.
+ 
+  ![Content Library Advanced](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Conent-Library-Advanced.PNG)
+ 
  10. Hit the Apply button.
 
-##  *ADD ANALYTIC CONNECTION*
+##  ADD ANALYTIC CONNECTION
  
 Define the name, Host, Port, Reconnect Timeout and Reg Timeout parameters
 
@@ -140,17 +144,17 @@ QMC > MANAGE CONTENT > Analytic Connections > + Create New
 |Reconnect Timeout|30
 |Request Timeout|30|
 
- ![Analytic Connection](https://github.com/senseexcel/senseexcel-reporting/blob/master/Analytic-Connection.PNG)
+ ![Analytic Connection](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Analytic-Connection.PNG)
 
 
-##  *ADD VIRTUAL PROXY*
+##  ADD VIRTUAL PROXY
 In this section you will define a new Virtual Proxy and then link it to the Main Proxy.  This operation MUST be done in a particular order. 
 
 Create the Virtual Proxy via the QMC’s Virtual Proxy menu first. To ensure that the links will work properly DO NOT utilize the Create New Virtual Proxy technique within the QMC Proxy Menu. 
 
 QMC > CONFIGURE SYSTEM > Virtual proxies > + Create new
 
-Once the new virtual proxy is created, confirm the following Properties are checked in the Dialogue Box on the right side of your screen.
+Check the following Properties on the right side of your screen.
 
 Identification
 
@@ -160,7 +164,7 @@ Load Balancing
 
 Advanced
 
-### *IDENTIFICATION SECTION*
+### IDENTIFICATION
 
 |Setting|Value|
 |--|--|
@@ -173,7 +177,8 @@ Open the file %appdata%/senseexcel/reporting/serconnector.pem in a text editor.
 
 Copy the full contents and paste them into the JWT certificate area shown below.
 
-### *AUTHENTICATION*
+### AUTHENTICATION
+
 |Setting|Value|
 |--|--|
 |Anonymous access mode | No anonymous user   |
@@ -181,6 +186,9 @@ Copy the full contents and paste them into the JWT certificate area shown below.
 JWT certificate | -----BEGIN CERTIFICATE-----|
 |JWT attribute for user ID | UserID|
 |JWT attribute value for user directory | UserDirectory
+
+
+![Virtual Proxy](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Analytic-Connection.PNG)
 
 
 ### LOAD BALANCING
@@ -192,13 +200,13 @@ Host white list > Add New Value > YOUR SERVER NAME
 
 
 ### LINK PROXIES
-This process is done last as earlier mentioned to ensure that the link between the existing Central proxy and newly created Virtual proxy will work properly.
+As mnentioned earlier, this step is performed last to ensure that the link between the Central proxy and newly created Virtual proxy will work properly.
 
 QMC > Proxies > Virual Proxies, Central (Default)  > Associate Items > Virtual Proxies > SER > +Add > Link Existing > ser
 
-## SECURITY RULES CREATION
+## CREATE SECURITY RULES
 
-### Add LicenseReadAll Security Rule
+### LicenseReadAll
 
 QMC > MANAGE RESOURCES > Security Rules > + Create new
 
@@ -227,7 +235,7 @@ Context			Both in hub and QMC
 
  ![License ReadAll Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/License-Read-All-Security-Rule.PNG)
 
-### Add Shared Content Rule
+### Shared Content
 
 QMC > MANAGE RESOURCES > Security Rules > + Create new
 
@@ -259,7 +267,7 @@ Validate Rule > Add Rule
 ![Shared Content Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/Shared-Content-Security-Rule.PNG)
 
 
-### Add SER License rule
+### SER License
 
 QMC > MANAGE RESOURCES > Security Rules > + Create new > SER License
 
@@ -287,9 +295,9 @@ Add the below value manually into the Conditions table:
 
 Validate Rule > Add Rule
 
-![SER License Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/SER-License-Security-Rule.PNG)
+![SER License Security Rule]( https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Security-Rule-SER-License.PNG)
 
-### Add SER Scheduler Rule
+### SER Scheduler
 
 QMC > MANAGE RESOURCES > Security Rules > + Create new > SER Scheduler
 
@@ -314,8 +322,6 @@ Actions | Check Read|
 |user | userDirectory  = |
 |value | INTERNAL|
 
-
-
 ### *ADVANCED*
 Setting |Value
 ----------|---------------
@@ -324,15 +330,17 @@ Setting |Value
 Validate Rule > Add Rule
 
 
-![SER Scheduler Security Rule]( https://github.com/senseexcel/senseexcel-reporting/blob/master/SER-Schedule-Security-Rule.PNG)
+![SER Scheduler Security Rule]( https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Security-Rule-SER-Scheduler.PNG)
 
 ## VALIDATE CONNECTOR IS RUNNING
 
-1. Go to C:\qlikshare\Reporting and run the RunConnector.bat batch file. Do not run in Administrator mode.
+1. Execute the RunConnector.bat batch file from the \Reporting directory. Do not run in Administrator mode.
 
-2. If the connector is running successfully the console window will display the following text on the last line.
+2. If the connector is running successfully, the console window will display the following text on the last line.
 
-3. The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
+The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
+
+![Install Connector](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Connector-Console.PNG)
 
 4. Go to services.msc and restart the Qlik Repository Database Service. This will prompt for a restart of every Qlik service.
 
@@ -344,20 +352,14 @@ Validate Rule > Add Rule
 
 3. Execute the following command  dotnet SerConAai.dll action:install
 
-![SER Connector as a Service](https://github.com/senseexcel/senseexcel-reporting/blob/master/Run-Connector-as-Service.PNG)
+![SER Connector as a Service](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Connector-As-Service.PNG)
 
 
 4. Open Services.msc
 
 5. Change the owner of the “Qlik Connector for SER” to the This User account.
 
-![SER Service Update Credentials](https://github.com/senseexcel/senseexcel-reporting/blob/master/Connector-Service-Update-Credentials.PNG)
+![SER Service Update Credentials](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Connector-Service-Credentials.PNG)
 
 6. Restart the service.
-
-
-
-
-
-
 
