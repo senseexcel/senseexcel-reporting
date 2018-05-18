@@ -164,7 +164,7 @@ QMC > MANAGE CONTENT > Analytic Connections > + Create New
 |Reconnect Timeout|30
 |Request Timeout|30|
 
- ![Analytic Connection](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Analytic-Connection.PNG)
+ ![Analytic Connection](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Analytic-Connection.PNG)
 
 
 ##  ADD VIRTUAL PROXY
