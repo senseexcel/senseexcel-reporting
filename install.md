@@ -152,7 +152,7 @@ QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
 
 ##  ADD ANALYTIC CONNECTION
  
-Define the name, Host, Port, Reconnect Timeout and Reg Timeout parameters
+Define the name, Host, Port, Reconnect Timeout and Reg Timeout parameters.  The name value IS CASE SENSITIVE and must be exactly SER.
 
 QMC > MANAGE CONTENT > Analytic Connections > + Create New
 
