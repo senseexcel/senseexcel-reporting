@@ -167,8 +167,10 @@ QMC > MANAGE CONTENT > Analytic Connections > + Create New
  ![Analytic Connection](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Analytic-Connection.PNG)
 
 
-##  ADD VIRTUAL PROXY
+## VIRTUAL PROXY
 In this section you will define a new Virtual Proxy and then link it to the Main Proxy.  This operation MUST be done in a particular order. 
+
+### Add
 
 Create the Virtual Proxy via the QMC’s Virtual Proxy menu first. To ensure that the links will work properly DO NOT utilize the Create New Virtual Proxy technique within the QMC Proxy Menu. 
 
@@ -184,7 +186,7 @@ Load Balancing
 
 Advanced
 
-### IDENTIFICATION
+#### IDENTIFICATION
 
 |Setting|Value|
 |--|--|
@@ -197,7 +199,7 @@ Open the file %appdata%/senseexcel/reporting/serconnector.pem in a text editor.
 
 Copy the full contents and paste them into the JWT certificate area shown below.
 
-### AUTHENTICATION
+#### AUTHENTICATION
 
 |Setting|Value|
 |--|--|
@@ -211,11 +213,11 @@ JWT certificate | -----BEGIN CERTIFICATE----- |
 ![Virtual Proxy](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Virtual-Proxy-1.PNG)
 
 
-### LOAD BALANCING
+#### LOAD BALANCING
 
 Load Balancing nodes > Server node > +Add New Server node > Central
 
-### ADVANCED
+#### ADVANCED
 Host white list > Add New Value > YOUR SERVER NAME
 
 
@@ -223,7 +225,6 @@ Host white list > Add New Value > YOUR SERVER NAME
 This step is performed last to ensure that the link between the Central proxy and newly created Virtual proxy will work properly.
 
 QMC > Proxies > Virual Proxies, Central (Default)  > Associate Items > Virtual Proxies > SER > +Add > Link Existing > ser
-
 
 ![Virtual Proxy](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Virtual-Proxy-2.PNG)
 
@@ -234,7 +235,7 @@ QMC > Proxies > Virual Proxies, Central (Default)  > Associate Items > Virtual P
 
 QMC > MANAGE RESOURCES > Security Rules > + Create new
 
-### IDENTIFICATION
+#### IDENTIFICATION
 
 |Setting | Value |
 |--------|-----------------|
@@ -243,14 +244,14 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new
 |Disabled | Leave Unchecked |
 |Description | |
 
-### BASIC
+#### BASIC
 
 |Setting         | Value    |
 |----------------|----------|
 |Resource filter |License_* |
 |Actions         |Read      |
 
-### ADVANCED
+#### ADVANCED
 
 
 |Setting    |Value                |
@@ -264,14 +265,14 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new
 
 QMC > MANAGE RESOURCES > Security Rules > + Create new
 
-### IDENTIFICATION
+#### IDENTIFICATION
 
 |Setting | Value |
 -----------|--------------
 |Name | _sharedcontent |
 |Description ||
 
-### BASIC
+#### BASIC
 
 |Setting         |Value     |   |
 |----------------|----------|---|
@@ -280,7 +281,7 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new
 |User            | name      | =  |
 |Value           | YOUR QLIK USER NAME |   |
 
-### ADVANCED
+#### ADVANCED
 
 |Setting    |Value             |
 |-----------|------------------|
@@ -296,7 +297,7 @@ Validate Rule > Add Rule
 
 QMC > MANAGE RESOURCES > Security Rules > + Create new > SER License
 
-### IDENTIFICATION
+#### IDENTIFICATION
 |Setting |Value
 |------------------|------------------|
 |Name | SER License |
@@ -304,13 +305,13 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new > SER License
 |Disabled | Leave Unchecked |
 |Description | |
 
-### BASIC
+#### BASIC
 |Setting |Value|
 |---|---|
 |Resource Filter | License_* |
 |Actions | Read |
 
-### ADVANCED
+#### ADVANCED
 Add the below value manually into the Conditions table:
 
 |Setting    |Value             |
@@ -326,7 +327,7 @@ Validate Rule > Add Rule
 
 QMC > MANAGE RESOURCES > Security Rules > + Create new > SER Scheduler
 
-### IDENTIFICATION
+#### IDENTIFICATION
 
 | Setting |Value
 |------------------|------------------|
@@ -335,7 +336,7 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new > SER Scheduler
 | Create Rule From Template | App Access|
 | Description | |
 
-### BASIC
+#### BASIC
 
 |Setting           | Value            |
 |------------------|------------------|
@@ -347,7 +348,7 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new > SER Scheduler
 | user             | userDirectory  = |
 | value            | INTERNAL         |
 
-### ADVANCED
+#### ADVANCED
 
 | Setting   |Value           |
 |-----------|--------------- |
