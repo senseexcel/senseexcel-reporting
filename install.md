@@ -156,13 +156,13 @@ Define the name, Host, Port, Reconnect Timeout and Reg Timeout parameters.  The 
 
 QMC > MANAGE CONTENT > Analytic Connections > + Create New
 
-|Setting|Value|
-------|--------------
-|Name | SER
-|Host | localhost
-|Port | 50059|
-|Reconnect Timeout|30
-|Request Timeout|30|
+|Setting|Value         |
+|-------|--------------|
+|Name   | SER          |
+|Host   | localhost    |
+|Port   | 50059        |
+|Reconnect Timeout | 30|
+|Request Timeout   | 30|
 
  ![Analytic Connection](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Analytic-Connection.PNG)
 
@@ -188,10 +188,10 @@ Advanced
 
 |Setting|Value|
 |--|--|
-|Description  |ser
-|Prefix|ser 
-Session inactivity timeout | 30
-Session cookie header name | X-Qlik-Session-ser|
+|Description  |ser |
+|Prefix|ser |
+|Session inactivity timeout | 30 |
+|Session cookie header name | X-Qlik-Session-ser|
 
 Open the file %appdata%/senseexcel/reporting/serconnector.pem in a text editor.
 
@@ -203,9 +203,9 @@ Copy the full contents and paste them into the JWT certificate area shown below.
 |--|--|
 |Anonymous access mode | No anonymous user   |
 |Authentication method | JWT|
-JWT certificate | -----BEGIN CERTIFICATE-----|
+JWT certificate | -----BEGIN CERTIFICATE----- |
 |JWT attribute for user ID | UserId|
-|JWT attribute value for user directory | UserDirectory
+|JWT attribute value for user directory | UserDirectory|
 
 
 ![Virtual Proxy](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Virtual-Proxy-1.PNG)
@@ -237,25 +237,26 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new
 ### IDENTIFICATION
 
 |Setting | Value |
-|-------------------------|
-|Name |LicenseReadAll  |
+|--------|-----------------|
+|Name    |LicenseReadAll  |
 |Create Rule from Template | Unspecified|
-|Disabled | Leave Unchecked||
-|Description ||
+|Disabled | Leave Unchecked |
+|Description | |
 
 ### BASIC
 
-|Setting | Value |
-|-------------------------|
-|Resource filter |License_*|
-|Actions|Read|
+|Setting         | Value    |
+|----------------|----------|
+|Resource filter |License_* |
+|Actions         |Read      |
 
 ### ADVANCED
 
-Conditions		!user.IsAnonymous()
 
-Context			Both in hub and QMC		
-
+|Setting    |Value                |
+|-----------|---------------------|
+|Conditions | !user.IsAnonymous() |
+|Context    | Both in hub and QMC |
 
  ![License ReadAll Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Security-Rule-License.PNG)
 
@@ -274,15 +275,17 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new
 
 |Setting         |Value     |   |
 |----------------|----------|---|
-|Resource Filter |SharedContent_* |   |
-|Actions         |Read, Update, Change Owner     |   |
-|User            |name      |=  |
-|Value           |YOUR QLIK USER NAME |   |
+|Resource Filter | SharedContent_* |   |
+|Actions         | Read, Update, Change Owner |   |
+|User            | name      | =  |
+|Value           | YOUR QLIK USER NAME |   |
 
 ### ADVANCED
 
-Conditions		((user.name="YOUR QLIK USER NAME"))
-Context			Both in hub and QMC			
+|Setting    |Value             |
+|-----------|------------------|
+|Conditions | ((user.name="YOUR QLIK USER NAME")) |
+|Context    | Both in hub and QMC   |
 
 Validate Rule > Add Rule
 
@@ -295,25 +298,25 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new > SER License
 
 ### IDENTIFICATION
 |Setting |Value
-------------------|------------------
-|Name | SER License|
-|Create Rule from Template | Unspecified|
-|Disabled | Leave Unchecked|
-|Description ||
+|------------------|------------------|
+|Name | SER License |
+|Create Rule from Template | Unspecified |
+|Disabled | Leave Unchecked |
+|Description | |
 
 ### BASIC
 |Setting |Value|
----|---|
-|Resource Filter | License_*
+|---|---|
+|Resource Filter | License_* |
 |Actions | Read |
 
 ### ADVANCED
 Add the below value manually into the Conditions table:
 
-|Setting |Value
-------------------|------------------
-|Conditions |!user.IsAnononymous()
-|Context |Both in hub and QMC|
+|Setting    |Value             |
+|-----------|------------------|
+|Conditions | !user.IsAnononymous() |
+|Context    | Both in hub and QMC   |
 
 Validate Rule > Add Rule
 
@@ -325,29 +328,29 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new > SER Scheduler
 
 ### IDENTIFICATION
 
-Setting |Value
-------------------|------------------
-Disabled | Leave Unchecked |
-Name | SER Scheduler|
-Create Rule From Template | App Access|
-Description ||
+| Setting |Value
+|------------------|------------------|
+| Disabled | Leave Unchecked |
+| Name | SER Scheduler |
+| Create Rule From Template | App Access|
+| Description | |
 
 ### BASIC
 
-Setting |Value
-------------------|------------------
-Resource Filter | App_*
-Actions |Read|
-|User |name | =
-|Value |ser_scheduler|
-| AND ||
-|user | userDirectory  = |
-|value | INTERNAL|
+|Setting           | Value            |
+|------------------|------------------|
+| Resource Filter  | App_*            |
+| Actions          | Read             |
+| User             | name             |
+| Value            | ser_scheduler    |
+| AND              |                  |
+| user             | userDirectory  = |
+| value            | INTERNAL         |
 
 ### ADVANCED
 
-Setting |Value
-----------|---------------
+| Setting   |Value           |
+|-----------|--------------- |
 |Conditions | ((user.name="ser_scheduler" and user.userDirectory="INTERNAL"))|
 
 Validate Rule > Add Rule
