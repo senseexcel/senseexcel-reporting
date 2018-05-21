@@ -44,7 +44,7 @@
 
  1. Unzip Sense Excel Reporting.zip to the \Reporting directory
  
- ![Install Files](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Install-Files.PNG)
+ ![Install Files](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Files-Install.PNG)
  
 
 ## 3. INSTALL CONNECTOR
