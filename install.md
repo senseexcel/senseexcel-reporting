@@ -22,7 +22,6 @@ serConnector.zip
 
  2. Unzip serConnector.zip to the \Reporting directory
  
- 
  ![Install Files](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Install-Files.PNG)
  
 
@@ -32,7 +31,7 @@ serConnector.zip
 
  ![Install Connector](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Connector-Console.PNG)
 
-2. Security keys will be created in  %appdata%\Roaming\senseexcel\reporting.
+2. Security keys will be created in the %appdata%\Roaming\senseexcel\reporting directory.
 
 3. Restart Qlik Repository Services and all sub-processes.
  
@@ -47,111 +46,106 @@ ser-ext-ondemand.zip
 
 ![Install Extension](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Extension-Install.PNG)
 
-##  UPDATE REPORTING CONFIGURATION FILE
+
+##  CONNECTOR CONFIGURATION FILE
 
 In a typical installation, this file will not need to be changed. 
 
-For additional information consult the example file \Reporting\Connector\config.hjson.example.
+In limited cases there may need to be changes to parameters such as directory paths or server identification parameters. For additional information consult the example file \Reporting\Connector\config.hjson.example.
 
 If changes to this configuration are necessary, perform the following steps.
 
- 1. Open the following file using Notepad or other text editor:
-\Reporting\Connector\config.hjson
+1. Open the following file using Notepad or other text editor:
 
- 2. Update the serEnginePath parameter:
-serEnginePath: \Reporting\Engine\SenseExcelReporting.exe
+\Reporting\Connector\config.hjson.
 
- 3. Update bindingHost parmeter:
+2. To update directory paths.
+
+By default all directory paths are relative.  If fixed directory paths are required they can be updated in the following parameters.
+
+workingDir: %temp%\senseexcelreportingser
+
+EnginePath: \Reporting\Engine\SenseExcelReporting.exe
+
+cert: %appdata%\senseexcel\reporting\serconnector.pem
+
+privateKey: %appdata%\senseexcel\reporting\serconnector_private.key
+
+
+3. To update Server identification parameters.
+
 bindingHost: localhost
-  
- 4. Update  bindingPort parameter
-bindingPort: 50059
 
- 5. Update the default the connectors takes parameters to your local server name:
- (https://LOCALSERVERNAME/ser) as serverUri
- 
- 6. Update the defined HTTP header for the virtual proxy
-		 key parameter: X-Qlik-Session-ser
-		 
- 7. Save and close config.hjson.
+serverUri: https://localhost/ser
 
-## ADD CONTENT LIBRARY
+4. Save and close config.hjson file.
 
-The following content library needs to be added to the Qlik Sense server for license management services.
+5. Restart SER Connector.
 
-senseexcel
-
-QMC > Content Libraries >  +Create New > senseexcel
-
-![Add Content Library](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Content-Library-Add.PNG)
+6. Restart Qlik Sense Repository Service and all sub-processes.
 
 
 ## ADD LICENSE INFORMATION
 
-Depending on your Qlik Sense licensing strategy, choose one of the following approaches. 
+There are two steps to this process.
+
+1. Create a license.txt file. Choose an approach from below based on your organization's Qlik Sense licensing strategy.
+
+2. Create a content library on the QMC and upload the license.txt file
 
 ### Token Licensing 
 
  1. Open a new text file.  
  
- 2. Copy and paste your LEF information
+ 2. Copy and paste your LEF information.
  
  3. Delete any spaces at end of each line.
  
  4. Save file with name license.txt.
- 
- 5. Open/Edit the senseexcel content library
-  
- QMC > MANAGE CONTENT > Content Libraries > senseexcel
- 
- 5. Upload the license.txt file to the senseexcel content library.
- 
-QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
-
-![Content Library Contents](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Content-Library-Contents.PNG)
-
- 6. Check the Advanced Property on the right side of the screen.
- 
- 7. Edit the Security rule for access to "senseexcel"
- 
- 8. Add the value !user.IsAnonymous in the Conditions box.
- 
- ![Content Library Advanced](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Content-Library-Advanced.PNG)
- 
- 9. Hit the Apply button.
- 
 
 ### Named Licensing
 
  1. Open a new text file.  
  
- 2. Copy and paste your LEF information
+ 2. Copy and paste your LEF information.
  
- 3. Append the LEF information with user information with the DOMAIN\user info for each user. See the example below.
- 4. The  FROM:TO info is optional. This will put a start and end date on your specified users. Use the format YYYY-MM-DD
+ 3. Append the LEF information with the DOMAIN\user information for each user. See the example below.
+ 
+  ![License Example](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/License-Example.PNG).
+  
+ 4. The FROM:TO info is optional. This will put a start and end date on your specified users. Use the format YYYY-MM-DD.
+ 
  5. Delete any spaces at end of each line.
  
  6. Save file with name license.txt.
  
- 7. Upload the license.txt file to the senseexcel content library.
- 
- 
-QMC > MANAGE CONTENT > Content Libraries > senseexcel > Upload > license.txt
+### Add License Content Library and Upload License Information
 
- ![License Example](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/License-Example.PNG)
+A Content Library needs to be added to the Qlik Sense server for license management services.
 
- 8. Check the Advanced Property on the right side of the screen
- 
- 9. Edit the Security rule for access to "senseexcel"
- 
- 10. Add the value !user.IsAnonymous in the Conditions box.
- 
-  ![Content Library Advanced](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Content-Library-Advanced.PNG)
- 
- 11. Hit the Apply button.
+1. QMC > Content Libraries >  +Create New > senseexcel
 
+![Add Content Library](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Content-Library-Add.PNG)
+
+2. Check the Advanced Property on the right side of the screen.
+ 
+In the Conditions Box add the value below
+ 
+!user.IsAnonymous
+
+![Content Library Advanced](https://github.com/senseexcel/senseexcel-reporting/docs/blob/master/Conent-Library-Advanced.PNG)
+
+3. Hit the Apply Button
+
+4. Check the Contents Property under Associated Items
+
+5. Upload the license.txt file.
+ 
+ 
 ##  ADD ANALYTIC CONNECTION
  
+This process creates a new Analytic Connection in the QMC to allow the Sense Excel Reporting processes to bind with the Qlik Sense Engine.
+
 Define the name, Host, Port, Reconnect Timeout and Reg Timeout parameters.  The name value IS CASE SENSITIVE and must be exactly SER.
 
 QMC > MANAGE CONTENT > Analytic Connections > + Create New
@@ -167,8 +161,11 @@ QMC > MANAGE CONTENT > Analytic Connections > + Create New
  ![Analytic Connection](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Analytic-Connection.PNG)
 
 
-## VIRTUAL PROXY
-In this section you will define a new Virtual Proxy and then link it to the Main Proxy.  This operation MUST be done in a particular order. 
+## ADD VIRTUAL PROXY
+
+In this section you will define a new Virtual Proxy and then link it to the Main Proxy.  This process is done to allow user and session information to be securely communicated between the Sense Excel Reporting Engine and the Qlik Sense Server.
+
+This operation MUST be done in a particular order. 
 
 ### Add
 
@@ -229,37 +226,9 @@ QMC > Proxies > Virual Proxies, Central (Default)  > Associate Items > Virtual P
 ![Virtual Proxy](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Virtual-Proxy-2.PNG)
 
 
-## CREATE SECURITY RULES
+## ADD SECURITY RULES
 
-### LicenseReadAll
-
-QMC > MANAGE RESOURCES > Security Rules > + Create new
-
-#### IDENTIFICATION
-
-|Setting | Value |
-|--------|-----------------|
-|Name    |LicenseReadAll  |
-|Create Rule from Template | Unspecified|
-|Disabled | Leave Unchecked |
-|Description | |
-
-#### BASIC
-
-|Setting         | Value    |
-|----------------|----------|
-|Resource filter |License_* |
-|Actions         |Read      |
-
-#### ADVANCED
-
-
-|Setting    |Value                |
-|-----------|---------------------|
-|Conditions | !user.IsAnonymous() |
-|Context    | Both in hub and QMC |
-
- ![License ReadAll Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Security-Rule-License.PNG)
+These security rules are defined to allow the Sense Excel processes to interact properly with the Qlik Sense engine.  All parameters are CASE SENSITIVE.
 
 ### Shared Content
 
@@ -267,10 +236,10 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new
 
 #### IDENTIFICATION
 
-|Setting | Value |
------------|--------------
-|Name | _sharedcontent |
-|Description ||
+|Setting      |Value           |
+|-------------|----------------|
+| Name        | _sharedcontent |
+| Description |                |
 
 #### BASIC
 
