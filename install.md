@@ -42,20 +42,14 @@
 
 ## 2. PREPARE INSTALLATION FILES
 
- 1. Place the following installation files on your desktop.
-
-ser-ext ondemand.zip
-
-serConnector.zip 
-
- 2. Unzip serConnector.zip to the \Reporting directory
+ 1. Unzip Sense Excel Reporting.zip to the \Reporting directory
  
  ![Install Files](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Install-Files.PNG)
  
 
 ## 3. INSTALL CONNECTOR
 
-1. Execute RunConnector.bat from the \Reporting directory.  
+1. Execute InstallConnector.bat from the \Reporting directory.  
 
  ![Install Connector](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Connector-Console.PNG)
 
@@ -70,7 +64,7 @@ Install the ser-ext-ondemand extension on the Qlik Sense server.
 
 QMC> MANAGE RESOURCES > EXTENSIONS +  Import + Choose File
 
-ser-ext-ondemand.zip
+\Reporting\Extension\ser-ext-ondemand.zip
 
 ![Install Extension](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Extension-Install.PNG)
 
