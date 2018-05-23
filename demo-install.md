@@ -91,31 +91,32 @@ INSERT PICTURE HERE - Demo-Apps-Import.png
 
  3.  ![App Button Create New Connection](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/App-Button-Create-New-Connection.PNG)
  
- 4. Choose a path of \qlikshare\Reporting\SERReports.
+ 4. Choose a path of \qlikshare\Reporting\SERReports and name the connection SERReports
  
- 5. Name the connection SERReports
+ ![Demo App Create Data Connection](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Create-Data-Connection.PNG) 
  
- 6. ![App Button Create](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/App-Button-Create.PNG)
+ 
+ 5. ![App Button Create](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/App-Button-Create.PNG)
 
- 4. Open the Data Connection section of the QMC.
+ 6. Open the Data Connection section of the QMC.
  
- 5. Choose the SERReports connection 
+ 7. Choose the SERReports connection 
 
 ![Demo Data Connection Edit](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-Data-Connection-Edit.PNG)
 
- 6.  ![QMC Button Edit](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/QMC-Button-Edit.PNG)
+ 8.  ![QMC Button Edit](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/QMC-Button-Edit.PNG)
  
- 7. Remove the appended user information from the connection name.
+ 9. Remove the appended user information from the connection name.
 
- 8.  ![QMC Button Apply](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/QMC-Button-Apply.PNG)
+ 10.  ![QMC Button Apply](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/QMC-Button-Apply.PNG)
 
  9. Return to the Executive Dashboard Connector App.
  
- 10. ![App Button Save](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/App-Button-Save.PNG)
+ 11. ![App Button Save](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/App-Button-Save.PNG)
  
- 10. Confirm that the SERReports connection no longer includes the appended user information in the name.
+ 12. Confirm that the SERReports connection no longer includes the appended user information in the name.
 
- 11. Within the script change the following parameters:
+ 13. Within the script change the following parameters:
 
  The App that the job will run on.
 
