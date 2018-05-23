@@ -83,7 +83,7 @@ INSERT PICTURE HERE - Demo-Apps-Import.png
 
  1. Open the Reporting Task Demo App from the HUB.
  
- ![Hub Icon App Reporting Task Demo(https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Hub-Icon-Reporting-Task.PNG)
+ ![Hub Icon App Reporting Task](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Hub-Icon-App-Reporting-Task.PNG)
 
  2. Press "Open" when the "This app contains no data" dialogue box appears.
  
@@ -95,13 +95,13 @@ INSERT PICTURE HERE - Demo-Apps-Import.png
  
  5. Choose the SERReports connection 
 
-![Demo-App-Data-Connection][https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Data-Connection.PNG)
+![Demo Data Connection Edit](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-Data-Connection-Edit.PNG)
 
  6.  ![QMC Button Edit](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/QMC-Button-Edit.PNG)
  
  7. Remove the appended user information from the connection name.
 
- 8.  ![QMC Button Save](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/QMC-Button-Save.PNG)
+ 8.  ![QMC Button Apply](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/QMC-Button-Apply.PNG)
 
  9. Return to the Executive Dashboard Connector App.
  
