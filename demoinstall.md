@@ -1,15 +1,18 @@
-> # INSTALL DEMO CONTENT
+> # SENSE EXCEL REPORTING DEMO INSTALL
 
-##  INSTALL DEMO APPS TO APP LIBRARY
+##  INSTALL DEMO APPS
 
-From the C:\Reporting\Apps directory install the following files to the QMC App Library.
+Upload the following files to the QMC App Library from the existing \qlikshare\Reporting\Examples directory or Sense Excel Reportng.zip.
 
-Executive Dashboard Connector.qvf
+Reporting Task Demo.qvf
 Executive Dashboard.qvf
 
-QMC > MANAGE CONTENT > APPS > Import app > Choose FIle >Executive Dashboard Connector.qvf
 
 QMC > MANAGE CONTENT > APPS > Import app > Choose FIle >Executive Dashboard.qvf
+QMC > MANAGE CONTENT > APPS > Import app > Choose FIle >Reporting Task Demo.qvf
+
+INSERT PICTURE HERE - Demo-Apps-Import.png
+
 
 ## CREATE CONTENT LIBRARY
 
@@ -19,24 +22,19 @@ Identification : senseexcelreporting
 
 Hit Apply Button
 
-Check the Advanced Tab on the right side of the screen
+Check the Advanced Property on the right side of the screen
 
 In the Conditions box, add the value !userIsAnonymous()
 
 Hit Apply Button
 
+INSERT PICTURE Demo-Content-Library.png
 
-##  INSTALL DEMO REPORT TEMPLATE TO CONTENT LIBRARY
+Check the Contents Property on the right side of the screen
 
+Upload the ExecutiveDashboard.xlsx file from \Reporting\Examples directory.
 
- 1. Download ExecutiveDashboard.xlsx from the App Contents of the Executive Dashboard App in the QMC.
-
-QMC > MANAGE CONTENT > Apps > Executive Dashboard > App contents (check) > ExecutiveDashboard.xlsx
-
-2. Upload the ExecutiveDashboard.xlsx file to the senseexcelreports content library.
-
-QMC > MANAGE CONTENT > Content libraries > senseexcelreports > Upload > Choose Files >ExecutiveDashboard.xlsx
-
+INSERT PICTURE Demo-Content-Library-Upload.png
 
 ##  ON DEMAND REPORTS DEMO
 
@@ -44,37 +42,31 @@ QMC > MANAGE CONTENT > Content libraries > senseexcelreports > Upload > Choose F
 
 2. Choose the Accounts Receivable tab
 
-3. Use the Edit Function to choose the parameters of the report you would like to run,
+3. Press the sheet Edit Button
 
-4. Click on the widget with the Generate Report Button
+INSERT PICTURE Demo-Report-Edit
 
-5. Open the Configuration Tab
+4. Click on the ser-On Demand Sense Report Custom Object that includes the Generate Report Button.
 
-6. Choose from the Library dropdown list where you would like to run the report from.  Choices are the senseexcelreports content library or InApp which will let you choose from templates that are attached to the app itself.
+5. Open the Configuration Tab in the Propery Panel on the right side of the screen
 
-7. Choose the ExceutiveDashboard.xlsx from the Content dropdown list.
+6. Open the Library dropdown list and choose the source of your template. Default, SenseExcelReports (content library) or InApp.
+
+7. Choose ExceutiveDashboard.xlsx from the Content dropdown list.
 
 8. Choose the Output Format. Excel or PDF
 
-9. Chose the Selection Mode.  Selection over Shared Session or Selection Over Book Mark. 
+9. Chose the Selection Mode.  Selection over shared session or Selection over bookmark. 
 
-Shared session will display the report running in an animated fashion on the screen.  
-
-Selection over Book Mark will perform report processing in the background.
-
- 10.   Choose Direct Download On or Off
-
-Direct Download On will open the report automatically in either your default PDF viewer or in Excel
-
-Direct Download off will require the Download Report button to be pushed.
+10. Choose Direct Download On or Off.  On will download the output file in the selected format to the local machine automatically as well as placing it in the Reports section of the Hub.  Off will place the file in the Hub and will allow the user to manually download the file manually by pressing the Download Report button in the Custom Object panel.
 
 11. Hit the Done Key.
 
-12. Choose the region you would like to have the report run for in the Region filter pane.  The associated segments will update based on that selection.
+12. Use the Selections button, enter Region in the search dialgue box and select the values you would like included in your report.   The associated Segments will update based on that selection.
 
 13. Hit the Generate Report Button to execute the report.
 
-The demo app is set to generate a Title Page a Summary Page a seperate Detail page for Each Segment Selected.
+This demo application is configured to loop over the Segment values based upon the Selection made and generate an output report which includes a Title Page a Summary Dasboard and a seperate Detail page for each Segment.
 
 
 
