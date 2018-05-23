@@ -58,7 +58,7 @@ INSERT PICTURE HERE - Demo-Apps-Import.png
 
 6. Open the Library dropdown list and choose the source of your template. Default, SenseExcelReports (content library) or InApp.
 
-![Demo App Select Content](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Select-Content.PNG)
+![Demo App Select Content](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Select-Content.png)
 
 7. Choose ExceutiveDashboard.xlsx from the Content dropdown list.
 
