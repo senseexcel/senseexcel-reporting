@@ -21,13 +21,13 @@ INSERT PICTURE HERE - Demo-Apps-Import.png
 
 Identification : senseexcelreporting
 
-2. Hit Apply Button
+2. [QMC Button Apply](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/QMC-Button-Apply.PNG)
 
 3. Check the Advanced Property on the right side of the screen
 
 4. In the Conditions box, add the value !userIsAnonymous()
 
-5. Hit  ![QMC Button Apply](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/QMC-Button-Apply.PNG)Apply Button
+5. [QMC Button Apply](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/QMC-Button-Apply.PNG)
 
 INSERT PICTURE Demo-Content-Library.png
 
