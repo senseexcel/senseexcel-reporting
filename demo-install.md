@@ -64,17 +64,17 @@ INSERT PICTURE HERE - Demo-Apps-Import.png
 
 8. Choose the Output Format. "Excel" or "PDF"
 
-![Demo App Select Output Format](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Select-Output-Format.PNG)
+![Demo App Select Output Format](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Select-Output-Format.png)
 
 9. Chose the Selection Mode.  "Selection over shared session" or "Selection over bookmark". 
 
-![Demo App Select Selection Mode](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Select-Selection-Mode.PNG)
+![Demo App Select Selection Mode](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Select-Selection-Mode.png)
 
 10. Choose Direct Download On or Off. Selecting "On" will automatically download the output file in the specified format to the local machine as well as place it in the Reports section of the Hub.  Choosing "Off" will place the file in the Hub and allow the user to  download the file on demand by pressing the Download Report button in the Custom Object panel.
 
 12. Use the Selections tool, enter "Region" in the search dialgue box and select the values you would like included in your report.   The associated Segments will update based on that selection.
 
-![Demo Report Selections](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-Report-Selections.PNG)
+![Demo App Report Selections](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Report-Selections.PNG)
 
 13. This application is configured to loop over the included Segment values based upon the app Selections made by the user. This will generate an output report including the following: a Title Page, Summary Dashboard and seperate Detail page for each Segment.
 
