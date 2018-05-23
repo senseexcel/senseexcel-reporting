@@ -41,9 +41,9 @@ INSERT PICTURE Demo-Content-Library-Upload.png
 
 1. Open the Executive Dashboard App from the Hub
 
-2. Choose the Accounts Receivable tab
+2. Choose the Accounts Receivable sheet.
 
-3. Press the Edit Button for the active sheet.
+3. Press the Edit Button.
 
 INSERT PICTURE Demo-Report-Edit
 
