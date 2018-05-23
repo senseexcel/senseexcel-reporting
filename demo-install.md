@@ -74,7 +74,7 @@ INSERT PICTURE HERE - Demo-Apps-Import.png
 
 12. Use the Selections tool, enter "Region" in the search dialgue box and select the values you would like included in your report.   The associated Segments will update based on that selection.
 
-![Demo App Report Selections](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Report-Selections.PNG)
+![Demo App Report Selection](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Report-Selection.PNG)
 
 13. This application is configured to loop over the included Segment values based upon the app Selections made by the user. This will generate an output report including the following: a Title Page, Summary Dashboard and seperate Detail page for each Segment.
 
@@ -82,26 +82,40 @@ INSERT PICTURE HERE - Demo-Apps-Import.png
 ##  SCHEDULED REPORTS DEMO
 
  1. Open the Reporting Task Demo App from the HUB.
+ 
+ ![Hub Icon App Reporting Task Demo(https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Hub-Icon-Reporting-Task.PNG)
 
  2. Press "Open" when the "This app contains no data" dialogue box appears.
  
- 3. Create a new data connection and name it SERReports.  Define the path as \Reporting\SERReports.
+![Demo App This app contains no data](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-This-app-contains-no-data.PNG) 
+
+ 3.  ![App Button Create New Connection](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/App-Button-Create-New-Connection.PNG)
 
  4. Open the Data Connection section of the QMC.
  
- 5. Choose the SERReports connection and remove the appended user information from the connection name.   
+ 5. Choose the SERReports connection 
 
- 6. Save the connection.
+![Demo-App-Data-Connection][https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Data-Connection.PNG)
 
- 7. Return to the Executive Dashboard Connector App and press the "Save" button.  Confirm that the SERReports connection no longer includes the appended user information in the name.
+ 6.  ![QMC Button Edit](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/QMC-Button-Edit.PNG)
+ 
+ 7. Remove the appended user information from the connection name.
 
- 8. Within the script change the following parameters:
+ 8.  ![QMC Button Save](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/QMC-Button-Save.PNG)
+
+ 9. Return to the Executive Dashboard Connector App.
+ 
+ 10. ![App Button Save](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/App-Button-Save.PNG)
+ 
+ 10. Confirm that the SERReports connection no longer includes the appended user information in the name.
+
+ 11. Within the script change the following parameters:
 
  The App that the job will run on.
 
 **app:  Executive Dashboard AppID from QMC**  
 
-To Choose the Template that the job will run on.  /// will use the associated content library.  // will use a discreet path.
+To Choose the Template that the job will run on.  /// will use the file(s) attached to the App.  // will use a lib: statement or a discreet path.
 
 **input: content:///ExecutiveDashboard.xlsx**
 
