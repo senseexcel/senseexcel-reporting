@@ -44,9 +44,9 @@ INSERT PICTURE HERE - Demo-Apps-Import.png
 
 ![Hub Icon App Executive Dashboard](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Hub-Icon-App-Executive-Dashboard.PNG)
 
-2. Choose the Accounts Receivable sheet.
+2. Choose the Account Receivable sheet.
 
-![Hub Icon App Executive Dashboard](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Hub-Icon-App-Accounts-Receivable.PNG)
+![Hub Icon App Account Receivable](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Hub-Icon-App-Account-Receivable.PNG)
 
 3. ![App Button Edit Sheet](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/App-Button-Edit-Sheet.PNG)
 
