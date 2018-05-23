@@ -27,47 +27,56 @@ INSERT PICTURE HERE - Demo-Apps-Import.png
 
 5. In the Conditions box, add the value !userIsAnonymous()
 
-6. ![QMC Button Apply](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/QMC-Button-Apply.PNG)
-
 ![Demo Content Library](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-Content-Library.PNG)
+
+6. ![App Button Edit Sheet](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/App-Button-Edit-Sheet.PNG)
 
 6. Check the Contents Property on the right side of the screen
 
 7. Upload the ExecutiveDashboard.xlsx file from \Reporting\Examples directory.
 
-INSERT PICTURE Demo-Content-Library-Upload.png
+![Demo Content Library Upload](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-Content-Library-Upload.PNG)
+
 
 ##  ON DEMAND REPORTS DEMO
 
 1. Open the Executive Dashboard App from the Hub
 
+![Hub Icon App Executive Dashboard](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Hub-Icon-App-Executive-Dashboard.PNG)
+
 2. Choose the Accounts Receivable sheet.
 
-3. Press the Edit Button.
+![Hub Icon App Executive Dashboard](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Hub-Icon-App-Accounts-Receivable.PNG)
 
-INSERT PICTURE Demo-Report-Edit
+3. ![App Button Edit Sheet](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/App-Button-Edit-Sheet.PNG)
 
 4. Click on the ser-On Demand Sense Report Custom Object that includes the Generate Report Button.
+
+![App Custom Object Box](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/App-Custom-Object-Box.PNG)
 
 5. Open the Configuration Tab in the Propery Panel on the right side of the screen
 
 6. Open the Library dropdown list and choose the source of your template. Default, SenseExcelReports (content library) or InApp.
 
+![Demo App Select Content](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Select-Content.PNG)
+
 7. Choose ExceutiveDashboard.xlsx from the Content dropdown list.
 
 8. Choose the Output Format. "Excel" or "PDF"
 
+![Demo App Select Output Format](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Select-Output-Format.PNG)
+
 9. Chose the Selection Mode.  "Selection over shared session" or "Selection over bookmark". 
+
+![Demo App Select Selection Mode](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Select-Selection-Mode.PNG)
 
 10. Choose Direct Download On or Off. Selecting "On" will automatically download the output file in the specified format to the local machine as well as place it in the Reports section of the Hub.  Choosing "Off" will place the file in the Hub and allow the user to  download the file on demand by pressing the Download Report button in the Custom Object panel.
 
-11. Hit the Done Key.
+12. Use the Selections tool, enter "Region" in the search dialgue box and select the values you would like included in your report.   The associated Segments will update based on that selection.
 
-12. Use the Selections button, enter "Region" in the search dialgue box and select the values you would like included in your report.   The associated Segments will update based on that selection.
+![Demo Report Selections](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-Report-Selections.PNG)
 
-13. Hit the Generate Report Button to execute the report.
-
-This application is configured to loop over the included Segment values based upon the app Selections made by the user. This will generate an output report including the following: a Title Page, Summary Dashboard and seperate Detail page for each Segment.
+13. This application is configured to loop over the included Segment values based upon the app Selections made by the user. This will generate an output report including the following: a Title Page, Summary Dashboard and seperate Detail page for each Segment.
 
 
 ##  SCHEDULED REPORTS DEMO
