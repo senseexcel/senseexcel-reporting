@@ -60,7 +60,7 @@ INSERT PICTURE HERE - Demo-Apps-Import.png
 
 ![Demo App Select Content](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-Select-Content.png)
 
-7. Choose ExceutiveDashboard.xlsx from the Content dropdown list.
+7. Choose ExecutiveDashboard.xlsx from the Content dropdown list.
 
 8. Choose the Output Format. "Excel" or "PDF"
 
@@ -90,6 +90,12 @@ INSERT PICTURE HERE - Demo-Apps-Import.png
 ![Demo App This app contains no data](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Demo-App-This-app-contains-no-data.PNG) 
 
  3.  ![App Button Create New Connection](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/App-Button-Create-New-Connection.PNG)
+ 
+ 4. Choose a path of \qlikshare\Reporting\SERReports.
+ 
+ 5. Name the connection SERReports
+ 
+ 6. ![App Button Create](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/App-Button-Create.PNG)
 
  4. Open the Data Connection section of the QMC.
  
