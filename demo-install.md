@@ -27,7 +27,7 @@ Identification : senseexcelreporting
 
 4. In the Conditions box, add the value !userIsAnonymous()
 
-5. Hit Apply Button
+5. Hit  ![QMC Button Apply](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/QMC-Button-Apply.PNG)Apply Button
 
 INSERT PICTURE Demo-Content-Library.png
 
