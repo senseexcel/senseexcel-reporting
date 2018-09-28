@@ -1,4 +1,4 @@
-//Example outputFormat options -> delimiter
+# Example outputFormat options -> delimiter
 
 template: 
 {
