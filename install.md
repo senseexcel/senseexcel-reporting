@@ -93,6 +93,15 @@ cert: %appdata%\senseexcel\reporting\serconnector.pem
 
 privateKey: %appdata%\senseexcel\reporting\serconnector_private.key
 
+## Note
+
+from current release version **3.2.0** please change in your config.hjson 
+
+"serEnginePath" : ..\netcoreapp2.1\Engine\ **SenseExcelReporting.exe** 
+
+**to**    
+
+"serEnginePath": ..\netcoreapp2.1\Engine\ **ser-engine.dll**
 
 3. To update Server identification parameters.
 
