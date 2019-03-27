@@ -16,7 +16,3 @@ Add 2 rules: "SER Scheduler" and "Ser ShareContent User"
  
  ![Install Files](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/SerScheduler.png)
  
- and add "Ser ShareContent User" rule like this:
- 
- 
- ![Install Files](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/SerShareContent.png)
