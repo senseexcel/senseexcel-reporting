@@ -1,5 +1,7 @@
 If want to use automation of reporting please add this rules in Qlik Sense
 
+Add 2 rules: "SER Scheduler" and "Ser ShareContent User"
+
 
 |Setting|Value         |
 |-------|--------------|
