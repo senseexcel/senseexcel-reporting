@@ -30,9 +30,9 @@
 
 ##  1. PREPARE SERVER
 
- 1.  Confirm Qlik Sense Server version. November 2017 or later is required.
+ 1.  Confirm Qlik Sense Server version. April 2019 or later is required.
 
- 2.  Please install the NET Core Runtime prior to this installation. Click to [Download](https:/www.microsoft.com/net/download/Windows/run)
+ 2.  Please downaload and install NET Core Runtime 2.2.5 or newer prior to this installation. Click to [Download](https://dotnet.microsoft.com/download)
  
  3. Create the following sub-directories within your Qlik Share directories.
  
@@ -80,31 +80,32 @@ If changes to this configuration are necessary, perform the following steps.
 
 \Reporting\Connector\config.hjson.
 
-# Creating a temporary directory for the report process
+Creating a temporary directory for the report process
  workingDir: %temp%\senseexelreporting
 
-# Host binding on gRPC Server
+Host binding on gRPC Server
  bindingHost: localhost
 
-# Port binding on gRPC Server
+Port binding on gRPC Server
  bindingPort: 50059
 
-# Connection to rest service
+Connection to rest service
  restServiceUrl: http://localhost:40263
 
-# Connection settings to Qlik
+Connection settings to Qlik
 By default the connectors takes https://PCNAME/ser as serverUri.  This is the location that the Qlik Sense Server certificate is pointed to.  If you need to use another value such as the fully qualified domain name, add an addtional line and leave the new entry uncommented like the example below:
-	 # serverUri: https://localhost/ser
+ '# serverUri: https://localhost/ser
   serverUri: https://qliksense.customer.com/ser
 
- # Qlik jwt connection info
- The defined HTTP header for the virtual proxy
-	key: X-Qlik-Session-ser
+Qlik JWT Connection Info
 
-	The authentication mode of the proxy. Standard configuration uses JWT, only change this setting if you need to use other authentication method.
-	type: SESSION
+The defined HTTP header for the virtual proxy
+key: X-Qlik-Session-ser
 
-The paremeters below point to the the JWT certificate, you can define relative paths or absolute paths
+The authentication mode of the proxy. Standard configuration uses JWT, only change this setting if you need to use other authentication method.
+type: SESSION
+
+The paremeters below point to the the JWT certificate public and private keys. You can define relative paths or absolute paths
 
 Realtive: cert: %appdata%\senseexcel\reporting\serconnector.pem
 Absolute: cert: c:\users\qliksenseuser\senseexcel\reporting\serconnector.pem
