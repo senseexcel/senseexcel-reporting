@@ -32,9 +32,11 @@
 
  1.  Confirm Qlik Sense Server version. April 2019 or later is required.
 
- 2.  Download and install NET Core Runtime 2.2.5 or newer prior to this installation. Click here to [Download](https://dotnet.microsoft.com/download)
+ 2.  Log into the server with the credentials of your Qlik Sense service account.
  
- 3. Create the following sub-directories within your Qlik Share directory.
+ 3. If not already running on the server, download and install NET Core Runtime 2.2.5 or newer prior to this installation. Click here to [Download](https://dotnet.microsoft.com/download)
+ 
+ 4. Create the following sub-directories within your Qlik Share directory.
  
 \Reporting
 
@@ -169,7 +171,7 @@ A Content Library needs to be added to the Qlik Sense server for license managem
 
 ![Content Library](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Content-Library-Add.PNG)
 
-2. When prompted for security rule creation, add the entry User Name Like "*" to make this content library avaiable to all users or include values to specify the users and/or groups that will need access in order to use Sense Excel or Sense Excel Reporting.  
+2. When prompted for security rule creation, add the entry User Name Like "*" to make this content library avaiable to all users or include values to specify the users and/or groups that will need access to use Sense Excel or Sense Excel Reporting.  
 
 3. Check the Advanced Property on the right side of the screen.
  
@@ -261,9 +263,9 @@ Load Balancing nodes > Server node > +Add New Server node > Central
 
 Host white list > Add New Value > YOUR SERVER'S MACHINE NAME
 
-Host white list > Add New Value > YOUR SERVER'S INTERNAL FULLY QUALIFIED DOMAIN NAME OR IPADDRESS
+Host white list > Add New Value > YOUR SERVER'S INTERNAL FULLY QUALIFIED DOMAIN NAME OR IP ADDRESS
 
-Host white list > Add New Value > YOUR SERVER'S EXTERNAL FULLY QUALIFIED DOMAIN NAME OR IPADDRESS
+Host white list > Add New Value > YOUR SERVER'S EXTERNAL FULLY QUALIFIED DOMAIN NAME OR IP ADDRESS
 
 
 ### LINK PROXIES
@@ -402,7 +404,7 @@ The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
 
 4. Open Services.msc.  Select the "Qlik Connector for SER" service, right mouse cliek to access Properties and choose the Log On tab.
 
-5. Change the owner to "This Account" and enter the creentials and password of the account running the other Qlik Sense services.
+5. Change the owner to "This Account" and enter the credentials and password of the account running the other Qlik Sense services.
 
 ![SER Service Update Credentials](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Connector-Service-Credentials.PNG)
 
