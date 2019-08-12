@@ -58,13 +58,14 @@
 3. Restart Qlik Repository Services and all sub-processes.
  
 
-## 4. INSTALL EXTENSION
+## 4. INSTALL EXTENSIONS
 
-Install the ser-ext-ondemand extension on the Qlik Sense server.
+Install the following extensions on the Qlik Sense server.
 
 QMC> MANAGE RESOURCES > EXTENSIONS +  Import + Choose File
 
-\Reporting\Extension\ser-ext-ondemand.zip
+\Reporting\Extension\ser-ext-ondemand-x.x.x.zip
+\Reporting\Extension\ser-web-management.x.x.x.zip
 
 ![Install Extension](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Extension-Install.PNG)
 
@@ -118,7 +119,7 @@ serverUri: https://localhost/ser
 
 ## 6. ADD LICENSE INFORMATION
 
-There are two steps to this process.
+There are two steps to this process.  If you have already installed a senseexcel content library and associated license.txt file for use with Sense Excel, this process does not need to be repeated unless you need to update your license key. 
 
 1. Create a license.txt file. Choose an approach from below based on your organization's Qlik Sense licensing strategy.
 
@@ -158,7 +159,9 @@ A Content Library needs to be added to the Qlik Sense server for license managem
 
 ![Content Library](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Content-Library-Add.PNG)
 
-2. Check the Advanced Property on the right side of the screen.
+2. When prompted for security rule creation, add the entry User Name Like "*" to make this content library avaiable to all users or include values to specify the users and/or groups that will need access in order to use Sense Excel or Sense Excel Reporting.  
+
+3. Check the Advanced Property on the right side of the screen.
  
 In the Conditions Box add the value below
  
@@ -196,7 +199,6 @@ QMC > MANAGE CONTENT > Analytic Connections > + Create New
 
 In this section you will define a new Virtual Proxy and then link it to the Main Proxy.  This process is done to allow user and session information to be securely communicated between the Sense Excel Reporting Engine and the Qlik Sense Server.
 
-This operation MUST be done in a particular order. 
 
 ### Add
 
@@ -246,8 +248,9 @@ JWT certificate | -----BEGIN CERTIFICATE----- |
 Load Balancing nodes > Server node > +Add New Server node > Central
 
 #### ADVANCED
-Host white list > Add New Value > YOUR SERVER NAME
-
+Host white list > Add New Value > YOUR SERVER'S MACHINE NAME
+Host white list > Add New Value > YOUR SERVER'S INTERNAL FULLY QUALIFIED DOMAIN NAME OR IPADDRESS
+Host white list > Add New Value > YOUR SERVER'S EXTERNAL FULLY QUALIFIED DOMAIN NAME OR IPADDRESS
 
 ### LINK PROXIES
 This step is performed last to ensure that the link between the Central Proxy and the newly created ser Virtual proxy will work properly.
@@ -361,9 +364,9 @@ Validate Rule > Add Rule
 
 ## 10. VALIDATE CONNECTOR IS RUNNING
 
-1. Execute the RunConnector.bat batch file from the \Reporting directory. Do not run as Administrator.
+1. Execute the TestConnectorService.bat batch file from the \Reporting directory as Administrator.
 
-2. If the connector is running successfully, the console window will display the following text on the last line.
+2. If the connector is running successfully, the console window will display the following text at around the 20th line from the top in the console window.
 
 The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
 
