@@ -32,9 +32,9 @@
 
  1.  Confirm Qlik Sense Server version. April 2019 or later is required.
 
- 2.  Please downaload and install NET Core Runtime 2.2.5 or newer prior to this installation. Click to [Download](https://dotnet.microsoft.com/download)
+ 2.  Download and install NET Core Runtime 2.2.5 or newer prior to this installation. Click here to [Download](https://dotnet.microsoft.com/download)
  
- 3. Create the following sub-directories within your Qlik Share directories.
+ 3. Create the following sub-directories within your Qlik Share directory.
  
 \Reporting
 
@@ -63,6 +63,7 @@ Install the following extensions on the Qlik Sense server.
 QMC> MANAGE RESOURCES > EXTENSIONS +  Import + Choose File
 
 \Reporting\Extension\ser-ext-ondemand-x.x.x.zip
+
 \Reporting\Extension\ser-web-management.x.x.x.zip
 
 ![Install Extension](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Extension-Install.PNG)
@@ -390,7 +391,7 @@ The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
 
 4. Open Services.msc.  Select the "Qlik Connector for SER" service, right mouse cliek to access Properties and choose the Log On tab.
 
-5. Change the owner to "This Acount" and enter the creentials and password of the account running the other Qlik Sense services.
+5. Change the owner to "This Account" and enter the creentials and password of the account running the other Qlik Sense services.
 
 ![SER Service Update Credentials](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Connector-Service-Credentials.PNG)
 
