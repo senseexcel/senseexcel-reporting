@@ -55,8 +55,6 @@
 
 2. Security keys will be created in the %appdata%\Roaming\senseexcel\reporting directory.
 
-3. Restart Qlik Repository Services and all sub-processes.
- 
 
 ## 4. INSTALL EXTENSIONS
 
@@ -72,7 +70,7 @@ QMC> MANAGE RESOURCES > EXTENSIONS +  Import + Choose File
 
 ##  5. EDIT CONNECTOR CONFIGURATION FILE
 
-In a typical installation, this file will not need to be changed. 
+In a default installation, this file will not need to be changed. 
 
 In limited cases there may need to be changes to parameters such as directory paths or server identification parameters. For additional information consult the example file \Reporting\Connector\config.hjson.example.
 
@@ -82,39 +80,42 @@ If changes to this configuration are necessary, perform the following steps.
 
 \Reporting\Connector\config.hjson.
 
-2. To update directory paths.
+# Creating a temporary directory for the report process
+ workingDir: %temp%\senseexelreporting
 
-By default all directory paths are relative.  If fixed directory paths are required they can be updated in the following parameters.
+# Host binding on gRPC Server
+ bindingHost: localhost
 
-workingDir: %temp%\senseexcelreportingser
+# Port binding on gRPC Server
+ bindingPort: 50059
 
-EnginePath: \Reporting\Engine\SenseExcelReporting.exe
+# Connection to rest service
+ restServiceUrl: http://localhost:40263
 
-cert: %appdata%\senseexcel\reporting\serconnector.pem
+# Connection settings to Qlik
+By default the connectors takes https://PCNAME/ser as serverUri.  This is the location that the Qlik Sense Server certificate is pointed to.  If you need to use another value such as the fully qualified domain name, add an addtional line and leave the new entry uncommented like the example below:
+	 # serverUri: https://localhost/ser
+  serverUri: https://qliksense.customer.com/ser
 
-privateKey: %appdata%\senseexcel\reporting\serconnector_private.key
+ # Qlik jwt connection info
+ The defined HTTP header for the virtual proxy
+	key: X-Qlik-Session-ser
 
-## Note
+	The authentication mode of the proxy. Standard configuration uses JWT, only change this setting if you need to use other authentication method.
+	type: SESSION
 
-from current release version **3.2.0** please change in your config.hjson 
+The paremeters below point to the the JWT certificate, you can define relative paths or absolute paths
 
-"serEnginePath" : ..\netcoreapp2.1\Engine\ **SenseExcelReporting.exe** 
+Realtive: cert: %appdata%\senseexcel\reporting\serconnector.pem
+Absolute: cert: c:\users\qliksenseuser\senseexcel\reporting\serconnector.pem
 
-**to**    
+Relative privateKey: %appdata%\senseexcel\reporting\serconnector_private.key
+Absolute privateKey: c:\users\qliksenseuser\senseexcel\reporting\serconnector_private.key
 
-"serEnginePath": ..\netcoreapp2.1\Engine\ **ser-engine.dll**
 
-3. To update Server identification parameters.
-
-bindingHost: localhost
-
-serverUri: https://localhost/ser
-
-4. Save and close config.hjson file.
+4. If you have made any changes to these parameters, save and close config.hjson file.
 
 5. Restart SER Connector.
-
-6. Restart Qlik Sense Repository Service and all sub-processes.
 
 
 ## 6. ADD LICENSE INFORMATION
@@ -372,7 +373,8 @@ The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
 
 ![Install Connector](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Connector-Console.PNG)
 
-4. Go to services.msc and restart the Qlik Repository Database Service. This will prompt for a restart of every Qlik service.
+3.  Once you have confirmed that the Connector is running successfully follow section 11 below to set the connector to run as a service.
+
 
 ## 11. SET THE SER CONNECTOR TO RUN AS A SERVICE
 
