@@ -373,22 +373,19 @@ The Ser.ConAai.SSEtoSER service is now running, press Control+C to exit.
 
 ## 11. SET THE SER CONNECTOR TO RUN AS A SERVICE
 
-1. Open a command prompt.
 
-2. Navigate to the \Reporting\Connector directory
+1. Navigate to the \Reporting\Connector directory
 
-3. Execute the following command  dotnet SerConAai.dll action:install as Administrator
+![Connector Service Install](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Connector-Service-Install.PNG)
+
+2. Run InstallConnectorService.bat as Administrator.  Upon successful installation you will see the message below in the command window.
 
 ![SER Connector as a Service](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Connector-As-Service.PNG)
 
-4. Open Services.msc
+4. Open Services.msc.  Select the "Qlik Connector for SER" service, right mouse cliek to access Properties and choose the Log On tab.
 
-5. Change the owner of the “Qlik Connector for SER” to the This User account.
-
-6. Use the same user account that is used to open your Qlik Sense services.
+5. Change the owner to "This Acount" and enter the creentials and password of the account running the other Qlik Sense services.
 
 ![SER Service Update Credentials](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Connector-Service-Credentials.PNG)
 
-6. Restart the service.
-
-7. Restart the Qlik Repository Service and all sub-processes.
+6. Restart the service.  Make sure that the credentials were entered correctly by confirming that the "Log On As" value matches the account running the other Qlik services and has not defaulted to the "Local System" account.
