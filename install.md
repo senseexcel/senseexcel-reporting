@@ -94,24 +94,31 @@ Connection to rest service
  restServiceUrl: http://localhost:40263
 
 Connection settings to Qlik
+
 By default the connectors takes https://PCNAME/ser as serverUri.  This is the location that the Qlik Sense Server certificate is pointed to.  If you need to use another value such as the fully qualified domain name, add an addtional line and leave the new entry uncommented like the example below:
+ 
  '# serverUri: https://localhost/ser
+  
   serverUri: https://qliksense.customer.com/ser
 
 Qlik JWT Connection Info
 
 The defined HTTP header for the virtual proxy
+
 key: X-Qlik-Session-ser
 
 The authentication mode of the proxy. Standard configuration uses JWT, only change this setting if you need to use other authentication method.
+
 type: SESSION
 
 The paremeters below point to the the JWT certificate public and private keys. You can define relative paths or absolute paths
 
 Realtive: cert: %appdata%\senseexcel\reporting\serconnector.pem
+
 Absolute: cert: c:\users\qliksenseuser\senseexcel\reporting\serconnector.pem
 
 Relative privateKey: %appdata%\senseexcel\reporting\serconnector_private.key
+
 Absolute privateKey: c:\users\qliksenseuser\senseexcel\reporting\serconnector_private.key
 
 
