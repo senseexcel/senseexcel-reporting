@@ -251,9 +251,13 @@ JWT certificate | -----BEGIN CERTIFICATE----- |
 Load Balancing nodes > Server node > +Add New Server node > Central
 
 #### ADVANCED
+
 Host white list > Add New Value > YOUR SERVER'S MACHINE NAME
+
 Host white list > Add New Value > YOUR SERVER'S INTERNAL FULLY QUALIFIED DOMAIN NAME OR IPADDRESS
+
 Host white list > Add New Value > YOUR SERVER'S EXTERNAL FULLY QUALIFIED DOMAIN NAME OR IPADDRESS
+
 
 ### LINK PROXIES
 This step is performed last to ensure that the link between the Central Proxy and the newly created ser Virtual proxy will work properly.
