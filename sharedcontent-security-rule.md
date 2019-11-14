@@ -3,4 +3,4 @@
  Add "Ser ShareContent User" rule like this:
  
  
- ![Install Files](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Securityrule.png)
+ ![Install Files](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/secrule.png)
