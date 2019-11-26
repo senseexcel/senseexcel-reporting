@@ -288,7 +288,7 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new
 
 |Setting      |Value           |
 |-------------|----------------|
-| Name        | _sharedcontent |
+| Name        | SER_Shared_Content |
 | Description |                |
 
 #### BASIC
@@ -296,20 +296,19 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new
 |Setting         |Value     |   |
 |----------------|----------|---|
 |Resource Filter | SharedContent_* |   |
-|Actions         | Read, Update, Change Owner |   |
-|User            | name      | =  |
-|Value           | YOUR QLIK USER NAME |   |
+|Actions         | Create, Read, Update, Delete |   |
+
 
 #### ADVANCED
 
 |Setting    |Value             |
 |-----------|------------------|
-|Conditions | ((user.name="YOUR QLIK USER NAME")) |
+|Conditions | ((!user.IsAnonymous() and user.name like "*")) |
 |Context    | Both in hub and QMC   |
 
 Validate Rule > Add Rule
 
-![Shared Content Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/Security-Rule-Shared-Content.PNG)
+![Shared Content Security Rule](https://https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/secrule.png)
 
 
 ### SER License
