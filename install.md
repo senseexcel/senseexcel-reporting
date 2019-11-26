@@ -308,7 +308,7 @@ QMC > MANAGE RESOURCES > Security Rules > + Create new
 
 Validate Rule > Add Rule
 
-![Shared Content Security Rule](https://https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/secrule.png)
+![Shared Content Security Rule](https://github.com/senseexcel/senseexcel-reporting/blob/master/docs/secrule.png)
 
 
 ### SER License
