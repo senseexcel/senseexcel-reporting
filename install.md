@@ -334,7 +334,7 @@ Add the below value manually into the Conditions table:
 
 |Setting    |Value             |
 |-----------|------------------|
-|Conditions | !user.IsAnononymous() |
+|Conditions | !user.IsAnonymous() |
 |Context    | Both in hub and QMC   |
 
 Validate Rule > Add Rule
